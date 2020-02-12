@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Failure</title>
+    <div th:replace="fragments/header :: header"></div>
+</head>
+<body>
+    <div class="container" align="center" >
+        <h2 style="{margin: auto}"> Failed ... <span th:text="${account.response}"/> </h2>
+    </div>
+</body>
+</html>

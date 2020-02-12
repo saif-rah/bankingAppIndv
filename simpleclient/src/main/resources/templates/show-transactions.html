@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Transactions</title>
+    <div th:replace="fragments/header :: header"></div>
+
+</head>
+<body>
+<div class="container" align="center">
+<div th:switch="${transactions}">
+    <h2 th:case="null">No transactions yet!</h2>
+    <div th:case="*">
+        <h2>Your Transactions</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="transaction : ${transactions}">
+                <td th:text="${transaction.source}"></td>
+                <td th:text="${transaction.destination}"></td>
+                <td th:text="${transaction.amount}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>send</title>
+    <div th:replace="fragments/header :: header"></div>
+</head>
+<body>
+<div class="container" align="center">
+    <form th:action="@{/send}" th:object="${account}" method="POST">
+        <label for="source">Source</label>
+        <input type="text" name="source" id="source" placeholder="source">
+        <label for="destination">Destination</label>
+        <input type="text" name="destination" id="destination" placeholder="destination">
+        <label for="amount">Amount</label>
+        <input type="text" name="amount" id="amount" placeholder="amount">
+        <input type="submit" value="Send">
+    </form>
+</div>
+</body>
+</html>

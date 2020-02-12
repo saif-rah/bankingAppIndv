@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank</title>
+    <div th:replace="fragments/header :: header"></div>
+</head>
+<body>
+<div class="container" align="center" >
+<p> Hi <span th:text="${account.username}"/>!!!</p>
+<h1> Services: </h1>
+<a th:href="@{'/getall/'+ ${account.username}}" > Get Transactions</a>
+<a th:href="@{/send}"> Send Money</a>
+<p><a th:href="@{/logout(username=${account.username})}">Logout</a></p>
+</div>
+</body>
+</html>
